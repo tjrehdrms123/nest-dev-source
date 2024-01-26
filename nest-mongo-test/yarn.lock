@@ -936,10 +936,10 @@
     "@types/cookiejar" "*"
     "@types/node" "*"
 
-"@types/supertest@^2.0.8":
-  "integrity" "sha512-Xt8TbEyZTnD5Xulw95GLMOkmjGICrOQyJ2jqgkSjAUR3mm7pAIzSR0NFBaMcwlzVvlpCjNwbATcWWwjNiZiFrQ=="
-  "resolved" "https://registry.npmjs.org/@types/supertest/-/supertest-2.0.10.tgz"
-  "version" "2.0.10"
+"@types/supertest@^2.0.16":
+  "integrity" "sha512-6c2ogktZ06tr2ENoZivgm7YnprnhYE4ZoXGMY+oA7IuAf17M8FWvujXZGmxLv8y0PTyts4x5A+erSwVUFA8XSg=="
+  "resolved" "https://registry.npmjs.org/@types/supertest/-/supertest-2.0.16.tgz"
+  "version" "2.0.16"
   dependencies:
     "@types/superagent" "*"
 
@@ -5584,10 +5584,15 @@
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
-"typescript@*", "typescript@^3.4.5 || ^4.0.0", "typescript@^3.7.4", "typescript@>=2.7", "typescript@>=3.8 <4.0":
-  "integrity" "sha512-kdMjTiekY+z/ubJCATUPlRDl39vXYiMV9iyeMuEuXZh2we6zz80uovNN2WlAxmmdE/Z/YQe+EbOEXB5RHEED3w=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-3.9.9.tgz"
-  "version" "3.9.9"
+"types@^0.1.1":
+  "integrity" "sha512-JuntZtJj4MKLE9x/XBs7IjsznYhzETwr34pw3XJTKvgYtAMdeMG+o8x8U85E5Lm6eCPa1DdOdGVsHMwq4ZnZAg=="
+  "resolved" "https://registry.npmjs.org/types/-/types-0.1.1.tgz"
+  "version" "0.1.1"
+
+"typescript@*", "typescript@^3.4.5 || ^4.0.0", "typescript@^3.9.10", "typescript@>=2.7", "typescript@>=3.8 <4.0":
+  "integrity" "sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-3.9.10.tgz"
+  "version" "3.9.10"
 
 "typescript@4.1.5":
   "integrity" "sha512-6OSu9PTIzmn9TCDiovULTnET6BgXtDYL4Gg4szY+cGsc3JP1dQL8qvE8kShTRx1NIw4Q9IBHlwODjkjWEtMUyA=="

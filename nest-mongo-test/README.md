@@ -50,7 +50,31 @@ npm test user.repository
    - [mock.model.ts](./src/database/test/support/mock.model.ts)
    - [user.model.ts](./src/users/test/support/user.model.ts)
 
-### Example
+### 참고 영상
+
+- [Nest.js E2E Testing With Supertest (Rest API + MongoDB)](https://www.youtube.com/watch?v=R2ndY_JhxWk&t=330s)
+
+## 🌿 E2E Code 작성 방법
+
+### SETTING
+
+1.  Test 파일 생성
+    - 모듈 폴더 밑 **test** 폴더 밑 **intergreation** 폴더 생성
+    - E2E할 파일 생성
+    - [users.controller.intergreation.spec.ts](./src/users/test/intergreation/users.controller.intergreation.spec.ts)
+2.  Database 연결
+    - [database.module.ts](./src/database/database.module.ts)
+    - [database.service.ts](./src/database/database.service.ts)
+3.  Database 주입
+    - [app.module.ts](./src/app.module.ts)
+4.  Test 파일 작성
+    - [users.controller.intergreation.spec.ts](./src/users/test/intergreation/users.controller.intergreation.spec.ts)
+
+### 참고 영상
+
+- [Nest.js Unit Testing | Best Practices + MongoDB](https://www.youtube.com/watch?v=1Vc6Xw8FMpg&t=335s))
+
+### TEST Code Example
 
 ```js
 describe('getUser', () => {
@@ -73,11 +97,3 @@ describe('getUser', () => {
   });
 });
 ```
-
-### 참고 영상
-
-- [Nest.js E2E Testing With Supertest (Rest API + MongoDB)](https://www.youtube.com/watch?v=R2ndY_JhxWk&t=330s)
-
-## 🌿 E2E Code 작성 방법
-
-- [Nest.js Unit Testing | Best Practices + MongoDB](https://www.youtube.com/watch?v=1Vc6Xw8FMpg&t=335s))
