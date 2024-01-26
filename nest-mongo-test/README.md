@@ -8,7 +8,7 @@
 
 ## 🌿 Unit Code 셋팅
 
-### 1. Setting
+### Setting
 
 1.  Test 파일 생성
     - 모듈 폴더 밑 **test** 폴더 생성
@@ -31,6 +31,30 @@
 4.  Test파일에 모킹한 공급자 연결
     - createTestingModule 함수의 providers 옵션이 `jest.mock('../users.service')`에 의해 모의된 값을 주입
     - [users.controller.spec.ts](./src/users/test/users.controller.spec.ts)
+
+### Example
+
+```js
+describe('getUser', () => {
+  describe('when getUser is called', () => {
+    let user: User;
+    beforeEach(async () => {
+      // 1. beforeEach에서 검증할 함수 실행 후 return 값 저장
+      user = await usersController.getUser(userStub().userId);
+    });
+    // 2. test 함수에서 Stub을 통해 값 검증
+    // -> usersService는 모킹된 Service 함수
+    test('then it should call usersService', () => {
+      // TEST CASE: usersService의 getUserById함수가 전달한 사용자 DI를 사용하여 Service에 메서드를 호출하고 있는지
+      expect(usersService.getUserById).toBeCalledWith(userStub().userId);
+    });
+    test('then is should return a user', () => {
+      // TEST CASE: 반환값이 옯바른지
+      expect(user).toEqual(userStub());
+    });
+  });
+});
+```
 
 ### 참고 영상
 

@@ -3,6 +3,8 @@ import { UsersController } from '../users.controller';
 import { UsersService } from '../users.service';
 import { userStub } from './stubs/user.stub';
 import { User } from '../schemas/user.schema';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
 
 
 jest.mock('../users.service')
@@ -29,12 +31,74 @@ describe('UsersController', () => {
 
       beforeEach(async () => {
         user = await usersController.getUser(userStub().userId)  
-        console.log('user:',user);
       })
 
       test('then it should call usersService', () => {
-        console.log('usersService:',usersController);
         expect(usersService.getUserById).toBeCalledWith(userStub().userId);
+      })
+
+      test('then is should return a user', () => {
+        expect(user).toEqual(userStub());
+      })
+    })
+  })
+
+  describe('getUsers', () => {
+    describe('when getUses is called', () => {
+      let users: User[];
+
+      beforeEach(async () => {
+        users = await usersController.getUsers()  
+      })
+
+      test('then it should call usersService', () => {
+        expect(usersService.getUsers).toHaveBeenCalled();
+      })
+
+      test('then is should return a user', () => {
+        expect(users).toEqual([userStub()]);
+      })
+    })
+  })
+
+  describe('createUser', () => {
+    describe('when createUser is called', () => {
+      let user: User;
+      let createUserDto: CreateUserDto
+
+      beforeEach(async () => {
+        createUserDto = {
+          email: userStub().email,
+          age: userStub().age
+        }
+        user = await usersController.createUser(createUserDto);
+      })
+
+      test('then it should call usersService', () => {
+        expect(usersService.createUser).toHaveBeenCalledWith(createUserDto.email, createUserDto.age);
+      })
+
+      test('then is should return a user', () => {
+        expect(user).toEqual(userStub());
+      })
+    })
+  })
+
+  describe('updateUser', () => {
+    describe('when updateUser is called', () => {
+      let user: User;
+      let updateUserDto: UpdateUserDto
+
+      beforeEach(async () => {
+        updateUserDto = {
+          favoriteFoods: ['pizza'],
+          age: 98
+        }
+        user = await usersController.updateUser(userStub().userId, updateUserDto)  
+      })
+
+      test('then it should call usersService', () => {
+        expect(usersService.updateUser).toHaveBeenCalledWith(userStub().userId, updateUserDto);
       })
 
       test('then is should return a user', () => {
