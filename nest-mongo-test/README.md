@@ -6,7 +6,17 @@
 
 테스트 함수는 deterministic 해야한다. (언제 실행되든 항상 같은 결과를 내야한다.)
 
-## 🌿 Unit Code 셋팅
+통합 테스트는 문제가 발생했을때 문제를 알려주는 것으로 생각하고,
+단위 테스트는 문제가 발생한 이유를 알려준다고 생각한다.
+
+## 🌿 Unit Code
+
+### RUN
+
+```bash
+npm test users.controller
+npm test user.repository
+```
 
 ### Setting
 
@@ -31,6 +41,14 @@
 4.  Test파일에 모킹한 공급자 연결
     - createTestingModule 함수의 providers 옵션이 `jest.mock('../users.service')`에 의해 모의된 값을 주입
     - [users.controller.spec.ts](./src/users/test/users.controller.spec.ts)
+
+---
+
+테스트 대상이 Repo일 경우 추가 작업
+
+5. 모델 파일 모킹
+   - [mock.model.ts](./src/database/test/support/mock.model.ts)
+   - [user.model.ts](./src/users/test/support/user.model.ts)
 
 ### Example
 
