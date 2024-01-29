@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: node-basic-concepts
+  name: node-basic-concepts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-basic-concepts
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: node-basic-concepts
+    spec:
+      containers:
+        - image: seogdonggeun/node-basic-concepts:latest
+          name: node-basic-concepts
+          ports:
+            - containerPort: 3322
+          resources: {}
+status: {}

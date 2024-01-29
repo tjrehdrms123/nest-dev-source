@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: node-basic-concepts
+  name: node-basic-concepts
+spec:
+  ports:
+    - name: node-basic-concepts
+      port: 3322
+      protocol: TCP
+      targetPort: 3322
+  selector:
+    app: node-basic-concepts
+  type: NodePort
+status:
+  loadBalancer: {}
